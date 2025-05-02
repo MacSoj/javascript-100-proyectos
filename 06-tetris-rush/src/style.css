@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+  font-family: 'Press Start 2P', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background: radial-gradient(circle at top, #1a1a2e, #0f0f1f);
+  color: #fdfdfd;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  background-color: #121212;
+}
+
+canvas {
+  border: 3px solid #00ffe1;
+  border-radius: 8px;
+  box-shadow: 0 0 25px #00ffe1, 0 0 50px #00ffe1a0;
+  background-color: #111;
+}
+
+section {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  background: rgba(0, 0, 0, 0.9);
+  color: #00ffe1;
+  font-size: 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+  z-index: 999;
+}
+
+section:hover {
+  background: rgba(0, 0, 0, 0.8);
+  color: #a0f;
+  text-shadow: 0 0 5px #f0f, 0 0 10px #0ff;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+strong {
+  background-color: #222;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  box-shadow: 0 0 10px #00ffe1;
+  color: #00ffe1;
+}
+
+strong span {
+  color: #fff;
+  padding-left: 0.5rem;
+}
+
+#game-over {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.95);
+  color: #ff006e;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  font-size: 1.5rem;
+  z-index: 999;
+  animation: fadeInZoom 0.8s ease-out;
+}
+
+#game-over h1 {
+  margin: 0;
+  font-size: 3rem;
+  animation: pulseGlow 2s infinite ease-in-out;
+}
+
+#game-over p {
+  font-size: 1rem;
+  color: #fff;
+  margin-top: 1rem;
+  opacity: 0.8;
+}
+
+#game-over.hidden {
+  display: none;
+}
+
+#game-over button {
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #ff006e;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #ff006e, 0 0 20px #ff006e;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+#game-over button:hover {
+  transform: scale(1.05);
+  background-color: #ff3389;
+}
+
+
+@keyframes pulseGlow {
+  0%, 100% {
+    text-shadow: 0 0 10px #ff006e, 0 0 20px #ff006e;
+  }
+  50% {
+    text-shadow: 0 0 15px #ff006e, 0 0 30px #ff006e;
+  }
+}
